@@ -11,38 +11,50 @@ import {Observable} from 'rxjs';
 
 /**
  * @typedef PeopleJSON
+ * @param min
+ * @param max
  * @param {object} datasource An object that contains people keyed by ID.
  * @example
  * {
- *   "user-1": {
- *     "ID": "user-1",
- *     "emails": [
- *       "barbara.german@acme.com"
- *     ],
- *     "displayName": "Barbara German",
- *     "firstName": "Barbara",
- *     "lastName": "German",
- *     "nickName": "",
- *     "avatar": "<URL to avatar>",
- *     "orgID": "",
- *     "status": null
- *   },
- *   "user-2": {
- *     "ID": "user-2",
- *     "emails": [
- *       "giacomo.drago@acme.com"
- *     ],
- *     "displayName": "Giacomo Drago",
- *     "firstName": "Giacomo",
- *     "lastName": "Drago",
- *     "nickName": "",
- *     "avatar": "<URL to avatar>",
- *     "orgID": "",
- *     "status": "active"
- *   }
+ * "user-1": {
+ * "ID": "user-1",
+ * "emails": [
+ * "barbara.german@acme.com"
+ * ],
+ * "displayName": "Barbara German",
+ * "firstName": "Barbara",
+ * "lastName": "German",
+ * "nickName": "",
+ * "avatar": "<URL to avatar>",
+ * "orgID": "",
+ * "status": null
+ * },
+ * "user-2": {
+ * "ID": "user-2",
+ * "emails": [
+ * "giacomo.drago@acme.com"
+ * ],
+ * "displayName": "Giacomo Drago",
+ * "firstName": "Giacomo",
+ * "lastName": "Drago",
+ * "nickName": "",
+ * "avatar": "<URL to avatar>",
+ * "orgID": "",
+ * "status": "active"
+ * }
  * }
  */
 
+/**
+ * Helper to simulate network requests.
+ *
+ * @param {number} min Min number
+ * @param {number} max Max number
+ * @returns {Number} A random number
+ */
+export function randomIntFromInterval(min, max) { // min and max included
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
 /**
  * `PersonJSONAdapter` is an implementation of the `PeopleAdapter` interface.
  * This implementation utilizes a JSON object as its source of people data.
@@ -78,12 +90,13 @@ export default class PeopleJSONAdapter extends PeopleAdapter {
   getPerson(ID) {
     return Observable.create((observer) => {
       if (this.datasource[ID]) {
-        observer.next(this.datasource[ID]);
+        setTimeout(() => {
+          observer.next(this.datasource[ID]);
+          observer.complete();
+        }, randomIntFromInterval(500, 1000));
       } else {
         observer.error(new Error(`Could not find person with ID "${ID}"`));
       }
-
-      observer.complete();
     });
   }
 }

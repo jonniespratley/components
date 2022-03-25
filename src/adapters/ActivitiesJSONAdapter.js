@@ -1,5 +1,6 @@
 import {ActivitiesAdapter} from '@webex/component-adapter-interfaces';
 import {Observable} from 'rxjs';
+import {randomIntFromInterval} from './PeopleJSONAdapter';
 
 const EMPTY_ACTION = {
   actionID: null,
@@ -61,12 +62,13 @@ export default class ActivitiesJSONAdapter extends ActivitiesAdapter {
   getActivity(ID) {
     return Observable.create((observer) => {
       if (this.datasource[ID]) {
-        observer.next(this.datasource[ID]);
+        setTimeout(() => {
+          observer.next(this.datasource[ID]);
+          observer.complete();
+        }, randomIntFromInterval(500, 1000));
       } else {
         observer.error(new Error(`Could not find activity with ID "${ID}"`));
       }
-
-      observer.complete();
     });
   }
 

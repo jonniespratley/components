@@ -1,12 +1,10 @@
 import React, {useContext} from 'react';
 import PropTypes from 'prop-types';
 
-import webexComponentClasses from '../helpers';
 import {useActivity} from '../hooks';
 import {AdapterContext} from '../hooks/contexts';
-
-import ActivityHeader from './ActivityHeader';
 import WebexAdaptiveCard from '../WebexAdaptiveCard/WebexAdaptiveCard';
+import Activity from './Activity';
 
 /**
  * WebexActivity component displays activity content.
@@ -22,18 +20,15 @@ export default function WebexActivity({activityID, className, style}) {
   const adapter = useContext(AdapterContext);
   const hasCard = adapter?.activitiesAdapter?.hasAdaptiveCard(activity);
 
-  const [cssClasses, sc] = webexComponentClasses('activity', className);
-
   return (
-    <div className={cssClasses} key={activity.ID} style={style}>
-      {activity.displayHeader && (
-        <ActivityHeader personID={activity.personID} timestamp={activity.created} />
-      )}
-      <div className={sc('content')}>
-        {!hasCard && activity.text && <div className={sc('message')}>{activity.text}</div>}
+    <>
+      <Activity {...activity} className={className} style={style} isReply={activity.parentID}>
         {hasCard && <WebexAdaptiveCard activityID={activity.ID} />}
-      </div>
-    </div>
+      </Activity>
+      {activity.replyIDs && activity.replyIDs.map((id) => (
+        <WebexActivity activityID={id} />
+      ))}
+    </>
   );
 }
 

@@ -2,13 +2,36 @@ import React from 'react';
 import {addDays, getDay, subDays} from 'date-fns';
 import activities from '../../data/activities';
 import WebexActivity from './WebexActivity';
+import Activity from './Activity';
 
 export default {
   title: 'Messaging/Webex Activity',
   component: WebexActivity,
 };
 
+const ActivityTemplate = (args) => <Activity {...args} />;
 const Template = (args) => <WebexActivity {...args} />;
+
+export const DefaultState = ActivityTemplate.bind({});
+DefaultState.args = {
+  ...activities.activity3,
+  personID: 'user2',
+  activityID: 'activity3',
+  displayHeader: true,
+  selected: false,
+  unread: false,
+};
+
+// Modify time data on the fly
+DefaultState.parameters = {
+  mockData: {
+    activities: {
+      activity3: {
+        ...activities.activity3,
+      },
+    },
+  },
+};
 
 export const CreatedLongBack = Template.bind({});
 CreatedLongBack.args = {
@@ -115,4 +138,17 @@ AdaptiveCard.parameters = {
       },
     },
   },
+};
+
+export const WithGif = ActivityTemplate.bind({});
+WithGif.args = {
+  ...activities.ActivityWithGiff,
+};
+export const WithFile = ActivityTemplate.bind({});
+WithFile.args = {
+  ...activities.ActivityWithFile,
+};
+export const WithReplys = Template.bind({});
+WithReplys.args = {
+  activityID: 'ActivityWithReplys',
 };

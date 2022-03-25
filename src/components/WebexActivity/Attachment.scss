@@ -1,0 +1,41 @@
+$C: #{$WEBEX_COMPONENTS_CLASS_PREFIX}-activity-attachment;
+
+
+.#{$C} {
+    background: rgba(255, 255, 255, 0.11);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    box-sizing: border-box;
+    border-radius: 8px;
+    display: flex;
+    min-width: 330px;
+    overflow: hidden;
+    margin: .5rem 0;
+    &__icon {
+       background: #1170cf;
+       border-radius: 8px;
+       width: 60px;
+       padding: 1rem;
+    }
+    &__content {
+       display: flex;
+       flex-direction: column;
+       padding: 0.5rem;
+       flex: 1;
+    }
+    &__action {
+       cursor: pointer;
+       display: flex;
+       align-content: center;
+       align-items: center;
+       width: 40px;
+    }
+    &--images {
+        .#{$C}__content{
+          padding: 0;
+       }
+       img {
+          max-height: 220px;
+       }
+    }
+ }
+ 

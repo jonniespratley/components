@@ -1202,6 +1202,79 @@ Array [
 ]
 `;
 
+exports[`Storyshots Messaging/Webex Activity Default State 1`] = `
+Array [
+  <div
+    className="wxc wxc-activity"
+  >
+    <div
+      className="wxc-activity__avatar"
+    >
+      <div
+        className="wxc wxc-avatar"
+      >
+        <div
+          className="wxc-avatar__content"
+        >
+          <svg
+            className="wxc-avatar__placeholder wxc-avatar__placeholder-6"
+            viewBox="0 0 40 40"
+          >
+            <text
+              x="50%"
+              y="50%"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      className="wxc-activity__content"
+    >
+      <div
+        className="wxc-activity__author"
+      >
+        <span
+          className="wxc-activity__person"
+        />
+        <span
+          className="wxc-activity__timestamp"
+        >
+          10:05 AM
+        </span>
+      </div>
+      <div
+        className="wxc-activity__message"
+      >
+        I ran into the same issue before! Have you checked your OS permissions?
+Sometimes that is disabled for the browser and causes the app to not load properly.
+Let me know if you need more help! Maybe we can talk about it during standup
+      </div>
+    </div>
+  </div>,
+  <video
+    autoPlay={true}
+    height="0"
+    id="remote-video"
+    loop={true}
+    muted={true}
+    playsInline={true}
+    src="./video/ongoing-meeting.mp4"
+    width="0"
+  />,
+  <video
+    autoPlay={true}
+    height="0"
+    id="remote-share"
+    loop={true}
+    muted={true}
+    playsInline={true}
+    src="./video/ongoing-share.mp4"
+    width="0"
+  />,
+]
+`;
+
 exports[`Storyshots Messaging/Webex Activity Multi Line 1`] = `
 Array [
   <div
@@ -1295,6 +1368,180 @@ Array [
         className="wxc-activity__message"
       >
         Can someone help me troubleshoot?
+      </div>
+    </div>
+  </div>,
+  <video
+    autoPlay={true}
+    height="0"
+    id="remote-video"
+    loop={true}
+    muted={true}
+    playsInline={true}
+    src="./video/ongoing-meeting.mp4"
+    width="0"
+  />,
+  <video
+    autoPlay={true}
+    height="0"
+    id="remote-share"
+    loop={true}
+    muted={true}
+    playsInline={true}
+    src="./video/ongoing-share.mp4"
+    width="0"
+  />,
+]
+`;
+
+exports[`Storyshots Messaging/Webex Activity With File 1`] = `
+Array [
+  <div
+    className="wxc wxc-activity"
+  >
+    <div
+      className="wxc-activity__avatar"
+    >
+      <div
+        className="wxc wxc-avatar"
+      >
+        <div
+          className="wxc-avatar__content"
+        >
+          <svg
+            className="wxc-avatar__placeholder wxc-avatar__placeholder-6"
+            viewBox="0 0 40 40"
+          >
+            <text
+              x="50%"
+              y="50%"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      className="wxc-activity__content"
+    >
+      <div
+        className="wxc-activity__author"
+      >
+        <span
+          className="wxc-activity__person"
+        />
+        <span
+          className="wxc-activity__timestamp"
+        >
+          01/01/2022, 8:12 AM
+        </span>
+      </div>
+      <div
+        className="wxc wxc-activity-attachment"
+        data-id="file1"
+        data-mime=""
+        data-size={750}
+      >
+        <div
+          className="wxc-activity-attachment__content"
+        >
+          <div
+            className="wxc-activity-attachment__name"
+          >
+            Normal.doc
+          </div>
+        </div>
+      </div>
+      <div
+        className="wxc-activity__message"
+      >
+        Lorem ipsum dolor site ate aetns ctetuer...
+      </div>
+    </div>
+  </div>,
+  <video
+    autoPlay={true}
+    height="0"
+    id="remote-video"
+    loop={true}
+    muted={true}
+    playsInline={true}
+    src="./video/ongoing-meeting.mp4"
+    width="0"
+  />,
+  <video
+    autoPlay={true}
+    height="0"
+    id="remote-share"
+    loop={true}
+    muted={true}
+    playsInline={true}
+    src="./video/ongoing-share.mp4"
+    width="0"
+  />,
+]
+`;
+
+exports[`Storyshots Messaging/Webex Activity With Gif 1`] = `
+Array [
+  <div
+    className="wxc wxc-activity"
+  >
+    <div
+      className="wxc-activity__avatar"
+    >
+      <div
+        className="wxc wxc-avatar"
+      >
+        <div
+          className="wxc-avatar__content"
+        >
+          <svg
+            className="wxc-avatar__placeholder wxc-avatar__placeholder-6"
+            viewBox="0 0 40 40"
+          >
+            <text
+              x="50%"
+              y="50%"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div
+      className="wxc-activity__content"
+    >
+      <div
+        className="wxc-activity__author"
+      >
+        <span
+          className="wxc-activity__person"
+        />
+        <span
+          className="wxc-activity__timestamp"
+        >
+          01/01/2022, 8:12 AM
+        </span>
+      </div>
+      <div
+        className="wxc wxc-activity-attachment"
+        data-id="0000-0000-0001"
+        data-mime="image/gif"
+        data-size={840691}
+      >
+        <div
+          className="wxc-activity-attachment__content"
+        >
+          <img
+            alt="Some GIF"
+            className="wxc-activity-attachment__image"
+            src="https://media0.giphy.com/media/13FrpeVH09Zrb2/giphy_s.gif"
+          />
+        </div>
+      </div>
+      <div
+        className="wxc-activity__message"
+      >
+        Lorem ipsum dolor site ate aetns ctetuer...
       </div>
     </div>
   </div>,

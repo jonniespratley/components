@@ -1,4 +1,62 @@
+const Activity = {
+  ID: 'act1',
+  text: 'Lorem ipsum dolor site ate aetns ctetuer',
+  created: '2022-01-01 08:12:00',
+  roomID: 'room1',
+  personID: 'user1',
+};
+
+const ActivityWithGiff = {
+  ID: 'ActivityWithGiff',
+  text: 'Lorem ipsum dolor site ate aetns ctetuer...',
+  created: '2022-01-01 08:12:00',
+  roomID: 'room1',
+  personID: 'user1',
+  type: 'content',
+  attachments: [
+    {
+      id: '0000-0000-0001',
+      fileSize: 840691,
+      displayName: 'Some GIF',
+      mimeType: 'image/gif',
+      url: 'https://media0.giphy.com/media/13FrpeVH09Zrb2/giphy_s.gif',
+      type: 'images',
+    },
+  ],
+};
+
+const ActivityWithFile = {
+  ...ActivityWithGiff,
+  ID: 'ActivityWithFile',
+  attachments: [
+    {
+      id: 'file1', fileSize: 750, displayName: 'Normal.doc', mimeType: '', url: '', type: 'file',
+    },
+  ],
+};
+
+const ActivityWithReplys = {
+  ...Activity,
+  ID: 'ActivityWithReplys',
+  replyIDs: ['activity0a', 'activity0b'],
+
+};
+const activity0 = {
+  ID: 'activity0a',
+  roomID: 'room1',
+  text: 'This is reply',
+  parentID: 'ActivityWithReplys',
+  personID: 'user3',
+  created: 'August 1, 2020 10:00:00',
+  displayHeader: true,
+};
+
 export default {
+  ActivityWithFile,
+  ActivityWithGiff,
+  ActivityWithReplys,
+  activity0a: activity0,
+  activity0b: activity0,
   activity1: {
     ID: 'activity1',
     roomID: 'room1',
@@ -61,6 +119,24 @@ export default {
     text: 'Following up on our last task. Seems like we need more time?',
     personID: 'user1',
     created: 'August 5, 2020 11:08:00',
+    displayHeader: true,
+  },
+  activity8a: {
+    ID: 'activity8a',
+    roomID: 'room2',
+    text: 'This is a reply',
+    personID: 'user1',
+    created: 'August 5, 2020 11:08:00',
+    parentID: 'activity8',
+    displayHeader: true,
+  },
+  activity8b: {
+    ID: 'activity8b',
+    roomID: 'room2',
+    text: 'This is a another reply',
+    personID: 'user1',
+    created: 'August 5, 2020 11:08:00',
+    parentID: 'activity8',
     displayHeader: true,
   },
   activity9: {
