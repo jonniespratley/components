@@ -18,8 +18,9 @@ DefaultState.args = {
   personID: 'user2',
   activityID: 'activity3',
   displayHeader: true,
-  selected: false,
-  unread: false,
+  isUnread: false,
+  isReply: false,
+  isSelected: false,
 };
 
 // Modify time data on the fly
@@ -147,8 +148,4 @@ WithGif.args = {
 export const WithFile = ActivityTemplate.bind({});
 WithFile.args = {
   ...activities.ActivityWithFile,
-};
-export const WithReplys = Template.bind({});
-WithReplys.args = {
-  activityID: 'ActivityWithReplys',
 };

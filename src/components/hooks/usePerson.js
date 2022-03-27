@@ -21,6 +21,9 @@ export default function usePerson(personID) {
   const {peopleAdapter} = useContext(AdapterContext);
 
   useEffect(() => {
+    if (!personID) {
+      return;
+    }
     const onError = (error) => {
       setPerson({
         displayName: ' ',

@@ -1,23 +1,24 @@
+import {allActivityIds} from './utils';
+
 export default {
   room1: {
     ID: 'room1',
     title: 'Developer Standup',
     roomType: 'group',
   },
+  'room1-previous-activities': ['activity1', 'activity3', ...allActivityIds.splice(0, 20)],
   'room1-activities': [
     'ActivityWithReplys',
     'ActivityWithFile',
     'ActivityWithGiff',
-
     'activity4',
     'activity5',
     'activity6',
     'activity7',
     'activity8',
     'activity9',
-
+    ...allActivityIds
   ],
-  'room1-previous-activities': ['activity1', 'activity3'],
   room2: {
     ID: 'room2',
     title: 'UI/UX Design',

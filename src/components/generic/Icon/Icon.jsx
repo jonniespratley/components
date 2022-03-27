@@ -16,6 +16,7 @@ import {
   CheckIcon,
   ControlDown,
   ControlUp,
+  DownloadIcon,
   DndPresenceIcon,
   ExternalUserIcon,
   HidePwdIcon,
@@ -40,7 +41,7 @@ import {
   WarningIcon,
 } from '../../icons';
 
-const icons = {
+export const icons = {
   'arrow-down': ArrowDown,
   'arrow-left': ArrowLeft,
   'arrow-up': ArrowUp,
@@ -55,6 +56,7 @@ const icons = {
   'content-share': ShareScreenIcon,
   'control-down': ControlDown,
   'control-up': ControlUp,
+  download: DownloadIcon,
   'dnd-presence': DndPresenceIcon,
   error: RemoteMediaErrorIcon,
   'external-user': ExternalUserIcon,

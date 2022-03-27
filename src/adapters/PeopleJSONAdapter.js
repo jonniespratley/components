@@ -93,7 +93,7 @@ export default class PeopleJSONAdapter extends PeopleAdapter {
         setTimeout(() => {
           observer.next(this.datasource[ID]);
           observer.complete();
-        }, randomIntFromInterval(500, 1000));
+        }, randomIntFromInterval(100, 500));
       } else {
         observer.error(new Error(`Could not find person with ID "${ID}"`));
       }

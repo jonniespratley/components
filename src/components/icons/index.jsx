@@ -13,6 +13,7 @@ export {default as CancelIcon} from './CancelIcon';
 export {default as ChatFilledIcon} from './ChatFilledIcon';
 export {default as ControlDown} from './ControlDown';
 export {default as ControlUp} from './ControlUp';
+export {default as DownloadIcon} from './DownloadIcon';
 export {default as DndPresenceIcon} from './DndPresenceIcon';
 export {default as ExternalUserIcon} from './ExternalUserIcon';
 export {default as HidePwdIcon} from './HidePwdIcon';

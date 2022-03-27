@@ -65,7 +65,7 @@ export default class ActivitiesJSONAdapter extends ActivitiesAdapter {
         setTimeout(() => {
           observer.next(this.datasource[ID]);
           observer.complete();
-        }, randomIntFromInterval(500, 1000));
+        }, randomIntFromInterval(100, 500));
       } else {
         observer.error(new Error(`Could not find activity with ID "${ID}"`));
       }

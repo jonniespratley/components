@@ -1,3 +1,5 @@
+import {mockActivities} from './utils';
+
 const Activity = {
   ID: 'act1',
   text: 'Lorem ipsum dolor site ate aetns ctetuer',
@@ -41,7 +43,8 @@ const ActivityWithReplys = {
   replyIDs: ['activity0a', 'activity0b'],
 
 };
-const activity0 = {
+
+const activity0a = {
   ID: 'activity0a',
   roomID: 'room1',
   text: 'This is reply',
@@ -50,13 +53,19 @@ const activity0 = {
   created: 'August 1, 2020 10:00:00',
   displayHeader: true,
 };
+const activity0b = {
+  ...activity0a,
+  ...Activity,
+  personID: 'user1',
+  ID: 'activity0b',
+};
 
-export default {
+const AllActivities = {
   ActivityWithFile,
   ActivityWithGiff,
   ActivityWithReplys,
-  activity0a: activity0,
-  activity0b: activity0,
+  activity0a: activity0a,
+  activity0b: activity0b,
   activity1: {
     ID: 'activity1',
     roomID: 'room1',
@@ -345,3 +354,9 @@ export default {
     ],
   },
 };
+
+mockActivities.forEach((act) => {
+   AllActivities[act.ID] = act;
+});
+
+export default AllActivities;

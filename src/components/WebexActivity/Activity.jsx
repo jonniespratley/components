@@ -6,6 +6,7 @@ import WebexAvatar from '../WebexAvatar/WebexAvatar';
 import usePerson from '../hooks/usePerson';
 import webexComponentClasses, {formatMessageDate} from '../helpers';
 import Attachment from './Attachment';
+import Loader from '../generic/Loader/Loader';
 
 /**
  * Activity component displays activity content.

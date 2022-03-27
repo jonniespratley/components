@@ -22,7 +22,7 @@ export default function WebexActivity({activityID, className, style}) {
 
   return (
     <>
-      <Activity {...activity} className={className} style={style} isReply={activity.parentID}>
+      <Activity {...activity} className={className} style={style} isReply={!!activity.parentID}>
         {hasCard && <WebexAdaptiveCard activityID={activity.ID} />}
       </Activity>
       {activity.replyIDs && activity.replyIDs.map((id) => (
