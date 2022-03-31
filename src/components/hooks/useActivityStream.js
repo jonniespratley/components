@@ -1,6 +1,6 @@
-import {useContext, useEffect, useReducer} from 'react';
+import {useEffect, useReducer} from 'react';
 
-import {AdapterContext} from './contexts';
+import {useAdapterContext} from './contexts';
 
 export const PREPEND_ACTIVITIES = 'prepend_activities';
 export const APPEND_ACTIVITIES = 'append_activities';
@@ -37,7 +37,7 @@ function reducer(activities, action) {
       break;
   }
 
-  return newActivities;
+  return [...new Set(newActivities)];
 }
 
 /**
@@ -47,7 +47,7 @@ function reducer(activities, action) {
  * @returns {Array} Activities state and state setter
  */
 export default function useActivityStream(roomID) {
-  const {roomsAdapter} = useContext(AdapterContext);
+  const {roomsAdapter} = useAdapterContext();
   const [activities, dispatch] = useReducer(reducer, []);
 
   // Subscribe to future updates on load
@@ -61,8 +61,7 @@ export default function useActivityStream(roomID) {
     return () => {
       activityUpdates.unsubscribe();
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [roomsAdapter, roomID]);
 
   return [activities, dispatch];
 }

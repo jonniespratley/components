@@ -25,5 +25,6 @@ export {default as withAdapter} from './hoc/withAdapter';
 export {default as Button} from './generic/Button/Button';
 export {default as Modal} from './generic/Modal/Modal';
 export {AdapterContext, MeetingContext} from './hooks/contexts';
+export * as hooks from './hooks';
 
 global.testRendererAct = (fn) => fn();

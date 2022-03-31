@@ -1,6 +1,6 @@
-import {useContext, useState, useEffect} from 'react';
+import {useState, useEffect, useMemo} from 'react';
 
-import {AdapterContext} from './contexts';
+import {useAdapterContext} from './contexts';
 
 // TODO: Figure out how to import JS Doc definitions and remove duplication.
 /**
@@ -17,15 +17,14 @@ import {AdapterContext} from './contexts';
  * @returns {Activity} Data of the activity
  */
 export default function useActivity(activityID) {
-  const [activity, setActivity] = useState({cards: []});
-  const adapter = useContext(AdapterContext);
-  const activitiesAdapter = adapter && adapter.activitiesAdapter;
+  const [activity, setActivity] = useState({});
+  const {activitiesAdapter} = useAdapterContext();
 
   useEffect(() => {
     let cleanup;
 
     if (!activitiesAdapter || !activityID) {
-      setActivity({cards: []});
+      setActivity(null);
       cleanup = undefined;
     } else {
       const onError = (error) => {

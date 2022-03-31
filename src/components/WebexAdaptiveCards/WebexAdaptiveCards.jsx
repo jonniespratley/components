@@ -57,7 +57,7 @@ export default function WebexAdaptiveCards({
 
   return (
     <div className={cssClasses} style={style}>
-      {activity.cards.map((_, index) => (
+      {activity.cards && activity.cards.map((_, index) => (
         <WebexAdaptiveCard
           key={index}
           activityID={activityID}
